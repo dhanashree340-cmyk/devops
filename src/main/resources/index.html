@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🐍 Snake Game</h1>
+
+        <!-- Stats Bar -->
+        <div class="info">
+            <div class="box">Score: <span id="score">0</span></div>
+            <div class="box">High Score: <span id="highScore">0</span></div>
+            <div class="box">Lives: <span id="lives">❤️❤️❤️</span></div>
+            <div class="box">Time: <span id="timer">00:00</span></div>
+        </div>
+
+        <!-- Difficulty Control & Restart -->
+        <div class="controls">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">🟢 Easy</option>
+                <option value="medium" selected>🟡 Medium</option>
+                <option value="hard">🔴 Hard</option>
+            </select>
+            <button id="restartBtn">🔄 Restart</button>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+        <div id="pauseMessage">⏸️ PAUSED</div>
+
+        <div class="instructions">
+            Press <b>Spacebar</b> to Pause / Resume<br>
+            Use <b>Arrow Keys</b> or <b>WASD</b> to move
+        </div>
+    </div>
+
+    <!-- Modals for Pause & Game Over -->
+    <div id="pauseOverlay" class="hidden"></div>
+    <div id="gameOverModal" class="hidden">
+        <span id="finalScore" style="display:none;"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
